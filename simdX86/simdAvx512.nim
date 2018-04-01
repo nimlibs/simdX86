@@ -16,6 +16,12 @@ proc `$`*(x: m512 | m512d): string =
     result &= ", " & $a[i]
   result &= " ]"
 
+proc mask8tomask16*(x: mmask8): mmask16 =
+  {.emit: [result," = __mmask16(",x,");"].}
+
+proc mask2int*(x: mmask8): cint =
+  mask2int(mask8tomask16(x))
+
 proc allEqual*(x,y: m512 | m512d): bool =
   let t = cmpneq_mask(x, y)
   result = (mask2int(t) == 0)

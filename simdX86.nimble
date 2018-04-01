@@ -7,7 +7,7 @@ license       = "MIT"
 
 requires "nim >= 0.17.0"
 
-var nimcmd = "nim c -r -t:-march=native "
+var nimcmd = "nim c -r -p:. -t:-march=native "
 
 task test, "runs basic tests":
   exec nimcmd & "simdX86"/"simdX86Test"

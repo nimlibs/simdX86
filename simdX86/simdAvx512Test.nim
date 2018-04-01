@@ -8,7 +8,7 @@ proc testAvx512Ps =
   echo z
   var r = setps(32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 2)
   checkEq(z, r)
-  z = setzeroPs()
+  z = setzeroPs512()
   checkNEq(z, r)
   z = add(x,y)
   checkEq(z, r)
@@ -20,7 +20,7 @@ proc testAvx512Pd =
   echo z
   var r = setpd(16, 14, 12, 10, 8, 6, 4, 2)
   checkEq(z, r)
-  z = setzeroPd()
+  z = setzeroPd512()
   checkNEq(z, r)
   z = add(x,y)
   checkEq(z, r)
