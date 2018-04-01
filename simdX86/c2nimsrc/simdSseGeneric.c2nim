@@ -1,5 +1,9 @@
 #header "immintrin.h"
+#mangle _mm_load_si128 load_si128
+#mangle _mm_loadl_epi64 loadl_epi64
+#mangle _mm_loadu_si128 loadu_si128
 #mangle "_[^_]*_cast[^_]*_{.*}" "cast$1"
+#mangle "_[^_]*_load{[^_]*}_{.*}" "load$1_${2}128"
 #mangle "_[^_]*_set_{.*}" "set$1"
 #mangle "_[^_]*_setzero_p{.*}" "setzero_p${1}128"
 #prefix __

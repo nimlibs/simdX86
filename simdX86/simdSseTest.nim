@@ -12,6 +12,14 @@ proc testSsePs =
   checkNEq(z, r)
   z = add(x,y)
   checkEq(z, r)
+  var a = x.toArray
+  y = loadu_ps128(addr a[0])
+  checkEq(x, y)
+  var b: type(x)
+  var pb = cast[ptr float32](addr b)
+  store(pb, x)
+  y = load_ps128(pb)
+  checkEq(x, y)
 
 proc testSsePd =
   var x = mm_set_pd(2, 1)
@@ -24,3 +32,11 @@ proc testSsePd =
   checkNEq(z, r)
   z = add(x,y)
   checkEq(z, r)
+  var a = x.toArray
+  y = loadu_pd128(addr a[0])
+  checkEq(x, y)
+  var b: type(x)
+  var pb = cast[ptr float64](addr b)
+  store(pb, x)
+  y = load_pd128(pb)
+  checkEq(x, y)

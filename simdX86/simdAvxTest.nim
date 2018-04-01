@@ -12,6 +12,14 @@ proc testAvxPs =
   checkNEq(z, r)
   z = add(x,y)
   checkEq(z, r)
+  var a = x.toArray
+  y = loadu_ps256(addr a[0])
+  checkEq(x, y)
+  var b: type(x)
+  var pb = cast[ptr float32](addr b)
+  store(pb, x)
+  y = load_ps256(pb)
+  checkEq(x, y)
 
 proc testAvxPd =
   var x = mm256_set_pd(4, 3, 2, 1)
@@ -24,3 +32,11 @@ proc testAvxPd =
   checkNEq(z, r)
   z = add(x,y)
   checkEq(z, r)
+  var a = x.toArray
+  y = loadu_pd256(addr a[0])
+  checkEq(x, y)
+  var b: type(x)
+  var pb = cast[ptr float64](addr b)
+  store(pb, x)
+  y = load_pd256(pb)
+  checkEq(x, y)

@@ -12,6 +12,14 @@ proc testAvx512Ps =
   checkNEq(z, r)
   z = add(x,y)
   checkEq(z, r)
+  var a = x.toArray
+  y = loadu_ps512(addr a[0])
+  checkEq(x, y)
+  var b: type(x)
+  var pb = cast[ptr float32](addr b)
+  store(pb, x)
+  y = load_ps512(pb)
+  checkEq(x, y)
 
 proc testAvx512Pd =
   var x = mm512_set_pd(8, 7, 6, 5, 4, 3, 2, 1)
@@ -24,3 +32,11 @@ proc testAvx512Pd =
   checkNEq(z, r)
   z = add(x,y)
   checkEq(z, r)
+  var a = x.toArray
+  y = loadu_pd512(addr a[0])
+  checkEq(x, y)
+  var b: type(x)
+  var pb = cast[ptr float64](addr b)
+  store(pb, x)
+  y = load_pd512(pb)
+  checkEq(x, y)

@@ -4224,8 +4224,8 @@ proc load*(src: m256d; k: mmask8; mem_addr: pointer): m256d {.
     importc: "_mm256_mask_load_pd", header: "immintrin.h".}
 proc load*(k: mmask8; mem_addr: pointer): m256d {.importc: "_mm256_maskz_load_pd",
     header: "immintrin.h".}
-proc load*(mem_addr: pointer): m512d {.importc: "_mm512_load_pd",
-                                   header: "immintrin.h".}
+proc load_pd512*(mem_addr: pointer): m512d {.importc: "_mm512_load_pd",
+    header: "immintrin.h".}
 proc load*(src: m512d; k: mmask8; mem_addr: pointer): m512d {.
     importc: "_mm512_mask_load_pd", header: "immintrin.h".}
 proc load*(k: mmask8; mem_addr: pointer): m512d {.importc: "_mm512_maskz_load_pd",
@@ -4238,7 +4238,8 @@ proc load*(src: m256; k: mmask8; mem_addr: pointer): m256 {.
     importc: "_mm256_mask_load_ps", header: "immintrin.h".}
 proc load*(k: mmask8; mem_addr: pointer): m256 {.importc: "_mm256_maskz_load_ps",
     header: "immintrin.h".}
-proc load*(mem_addr: pointer): m512 {.importc: "_mm512_load_ps", header: "immintrin.h".}
+proc load_ps512*(mem_addr: pointer): m512 {.importc: "_mm512_load_ps",
+                                        header: "immintrin.h".}
 proc load*(src: m512; k: mmask16; mem_addr: pointer): m512 {.
     importc: "_mm512_mask_load_ps", header: "immintrin.h".}
 proc load*(k: mmask16; mem_addr: pointer): m512 {.importc: "_mm512_maskz_load_ps",
@@ -4309,8 +4310,8 @@ proc loadu*(src: m256d; k: mmask8; mem_addr: pointer): m256d {.
     importc: "_mm256_mask_loadu_pd", header: "immintrin.h".}
 proc loadu*(k: mmask8; mem_addr: pointer): m256d {.importc: "_mm256_maskz_loadu_pd",
     header: "immintrin.h".}
-proc loadu*(mem_addr: pointer): m512d {.importc: "_mm512_loadu_pd",
-                                    header: "immintrin.h".}
+proc loadu_pd512*(mem_addr: pointer): m512d {.importc: "_mm512_loadu_pd",
+    header: "immintrin.h".}
 proc loadu*(src: m512d; k: mmask8; mem_addr: pointer): m512d {.
     importc: "_mm512_mask_loadu_pd", header: "immintrin.h".}
 proc loadu*(k: mmask8; mem_addr: pointer): m512d {.importc: "_mm512_maskz_loadu_pd",
@@ -4323,8 +4324,8 @@ proc loadu*(src: m256; k: mmask8; mem_addr: pointer): m256 {.
     importc: "_mm256_mask_loadu_ps", header: "immintrin.h".}
 proc loadu*(k: mmask8; mem_addr: pointer): m256 {.importc: "_mm256_maskz_loadu_ps",
     header: "immintrin.h".}
-proc loadu*(mem_addr: pointer): m512 {.importc: "_mm512_loadu_ps",
-                                   header: "immintrin.h".}
+proc loadu_ps512*(mem_addr: pointer): m512 {.importc: "_mm512_loadu_ps",
+    header: "immintrin.h".}
 proc loadu*(src: m512; k: mmask16; mem_addr: pointer): m512 {.
     importc: "_mm512_mask_loadu_ps", header: "immintrin.h".}
 proc loadu*(k: mmask16; mem_addr: pointer): m512 {.importc: "_mm512_maskz_loadu_ps",

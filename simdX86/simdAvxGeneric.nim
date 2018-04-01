@@ -386,16 +386,16 @@ proc inserti128_si256*(a: m256i; b: m128i; imm8: cint): m256i {.
     importc: "_mm256_inserti128_si256", header: "immintrin.h".}
 proc lddqu_si256*(mem_addr: ptr m256i): m256i {.importc: "_mm256_lddqu_si256",
     header: "immintrin.h".}
-proc load*(mem_addr: ptr cdouble): m256d {.importc: "_mm256_load_pd",
-                                      header: "immintrin.h".}
-proc load*(mem_addr: ptr cfloat): m256 {.importc: "_mm256_load_ps",
-                                    header: "immintrin.h".}
+proc load_pd256*(mem_addr: ptr cdouble): m256d {.importc: "_mm256_load_pd",
+    header: "immintrin.h".}
+proc load_ps256*(mem_addr: ptr cfloat): m256 {.importc: "_mm256_load_ps",
+    header: "immintrin.h".}
 proc load_si256*(mem_addr: ptr m256i): m256i {.importc: "_mm256_load_si256",
     header: "immintrin.h".}
-proc loadu*(mem_addr: ptr cdouble): m256d {.importc: "_mm256_loadu_pd",
-                                       header: "immintrin.h".}
-proc loadu*(mem_addr: ptr cfloat): m256 {.importc: "_mm256_loadu_ps",
-                                     header: "immintrin.h".}
+proc loadu_pd256*(mem_addr: ptr cdouble): m256d {.importc: "_mm256_loadu_pd",
+    header: "immintrin.h".}
+proc loadu_ps256*(mem_addr: ptr cfloat): m256 {.importc: "_mm256_loadu_ps",
+    header: "immintrin.h".}
 proc loadu_si256*(mem_addr: ptr m256i): m256i {.importc: "_mm256_loadu_si256",
     header: "immintrin.h".}
 proc loadu2_m128*(hiaddr: ptr cfloat; loaddr: ptr cfloat): m256 {.
@@ -408,13 +408,13 @@ proc madd_epi16*(a: m256i; b: m256i): m256i {.importc: "_mm256_madd_epi16",
                                         header: "immintrin.h".}
 proc maddubs_epi16*(a: m256i; b: m256i): m256i {.importc: "_mm256_maddubs_epi16",
     header: "immintrin.h".}
-proc maskload_epi32*(mem_addr: ptr cint; mask: m128i): m128i {.
-    importc: "_mm_maskload_epi32", header: "immintrin.h".}
-proc maskload_epi32*(mem_addr: ptr cint; mask: m256i): m256i {.
+proc maskload*(mem_addr: ptr cint; mask: m128i): m128i {.importc: "_mm_maskload_epi32",
+    header: "immintrin.h".}
+proc maskload*(mem_addr: ptr cint; mask: m256i): m256i {.
     importc: "_mm256_maskload_epi32", header: "immintrin.h".}
-proc maskload_epi64*(mem_addr: ptr int64; mask: m128i): m128i {.
+proc maskload*(mem_addr: ptr int64; mask: m128i): m128i {.
     importc: "_mm_maskload_epi64", header: "immintrin.h".}
-proc maskload_epi64*(mem_addr: ptr int64; mask: m256i): m256i {.
+proc maskload*(mem_addr: ptr int64; mask: m256i): m256i {.
     importc: "_mm256_maskload_epi64", header: "immintrin.h".}
 proc maskload*(mem_addr: ptr cdouble; mask: m128i): m128d {.importc: "_mm_maskload_pd",
     header: "immintrin.h".}
@@ -694,11 +694,11 @@ proc storeu*(mem_addr: ptr cfloat; a: m256) {.importc: "_mm256_storeu_ps",
                                         header: "immintrin.h".}
 proc storeu_si256*(mem_addr: ptr m256i; a: m256i) {.importc: "_mm256_storeu_si256",
     header: "immintrin.h".}
-proc storeu2_m128*(hiaddr: ptr cfloat; loaddr: ptr cfloat; a: m256) {.
+proc storeu2*(hiaddr: ptr cfloat; loaddr: ptr cfloat; a: m256) {.
     importc: "_mm256_storeu2_m128", header: "immintrin.h".}
-proc storeu2_m128d*(hiaddr: ptr cdouble; loaddr: ptr cdouble; a: m256d) {.
+proc storeu2*(hiaddr: ptr cdouble; loaddr: ptr cdouble; a: m256d) {.
     importc: "_mm256_storeu2_m128d", header: "immintrin.h".}
-proc storeu2_m128i*(hiaddr: ptr m128i; loaddr: ptr m128i; a: m256i) {.
+proc storeu2*(hiaddr: ptr m128i; loaddr: ptr m128i; a: m256i) {.
     importc: "_mm256_storeu2_m128i", header: "immintrin.h".}
 proc stream_load_si256*(mem_addr: ptr m256i): m256i {.
     importc: "_mm256_stream_load_si256", header: "immintrin.h".}

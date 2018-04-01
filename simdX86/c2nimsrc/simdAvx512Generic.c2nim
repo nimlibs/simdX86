@@ -1,5 +1,6 @@
 #header "immintrin.h"
 #mangle "_[^_]*_cast[^_]*_{.*}" "cast$1"
+#mangle "_[^_]*_load{[^_]*}_p{.*}" "load$1_p${2}512"
 #mangle "_[^_]*_{[^_]*}_ps_mask" "$1_mask"
 #mangle "_[^_]*_{[^_]*}_pd_mask" "$1_mask"
 #mangle "_[^_]*_mask_{[^_]*}_ps_mask" "$1_mask"

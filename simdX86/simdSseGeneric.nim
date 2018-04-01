@@ -424,43 +424,44 @@ proc insert*(a: m128; b: m128; imm8: cint): m128 {.importc: "_mm_insert_ps",
 proc lddqu_si128*(mem_addr: ptr m128i): m128i {.importc: "_mm_lddqu_si128",
     header: "immintrin.h".}
 proc lfence*() {.importc: "_mm_lfence", header: "immintrin.h".}
-proc load*(mem_addr: ptr cdouble): m128d {.importc: "_mm_load_pd",
-                                      header: "immintrin.h".}
-proc load_pd1*(mem_addr: ptr cdouble): m128d {.importc: "_mm_load_pd1",
+proc load_pd128*(mem_addr: ptr cdouble): m128d {.importc: "_mm_load_pd",
     header: "immintrin.h".}
-proc load*(mem_addr: ptr cfloat): m128 {.importc: "_mm_load_ps", header: "immintrin.h".}
-proc load_ps1*(mem_addr: ptr cfloat): m128 {.importc: "_mm_load_ps1",
-                                        header: "immintrin.h".}
-proc load_sd*(mem_addr: ptr cdouble): m128d {.importc: "_mm_load_sd",
+proc load_pd1128*(mem_addr: ptr cdouble): m128d {.importc: "_mm_load_pd1",
+    header: "immintrin.h".}
+proc load_ps128*(mem_addr: ptr cfloat): m128 {.importc: "_mm_load_ps",
+    header: "immintrin.h".}
+proc load_ps1128*(mem_addr: ptr cfloat): m128 {.importc: "_mm_load_ps1",
+    header: "immintrin.h".}
+proc load_sd128*(mem_addr: ptr cdouble): m128d {.importc: "_mm_load_sd",
     header: "immintrin.h".}
 proc load_si128*(mem_addr: ptr m128i): m128i {.importc: "_mm_load_si128",
     header: "immintrin.h".}
-proc load_ss*(mem_addr: ptr cfloat): m128 {.importc: "_mm_load_ss",
-                                       header: "immintrin.h".}
-proc load1*(mem_addr: ptr cdouble): m128d {.importc: "_mm_load1_pd",
-                                       header: "immintrin.h".}
-proc load1*(mem_addr: ptr cfloat): m128 {.importc: "_mm_load1_ps",
-                                     header: "immintrin.h".}
-proc loaddup*(mem_addr: ptr cdouble): m128d {.importc: "_mm_loaddup_pd",
+proc load_ss128*(mem_addr: ptr cfloat): m128 {.importc: "_mm_load_ss",
     header: "immintrin.h".}
-proc loadh*(a: m128d; mem_addr: ptr cdouble): m128d {.importc: "_mm_loadh_pd",
+proc load1_pd128*(mem_addr: ptr cdouble): m128d {.importc: "_mm_load1_pd",
     header: "immintrin.h".}
-proc loadh_pi*(a: m128; mem_addr: ptr m64): m128 {.importc: "_mm_loadh_pi",
+proc load1_ps128*(mem_addr: ptr cfloat): m128 {.importc: "_mm_load1_ps",
+    header: "immintrin.h".}
+proc loaddup_pd128*(mem_addr: ptr cdouble): m128d {.importc: "_mm_loaddup_pd",
+    header: "immintrin.h".}
+proc loadh_pd128*(a: m128d; mem_addr: ptr cdouble): m128d {.importc: "_mm_loadh_pd",
+    header: "immintrin.h".}
+proc loadh_pi128*(a: m128; mem_addr: ptr m64): m128 {.importc: "_mm_loadh_pi",
     header: "immintrin.h".}
 proc loadl_epi64*(mem_addr: ptr m128i): m128i {.importc: "_mm_loadl_epi64",
     header: "immintrin.h".}
-proc loadl*(a: m128d; mem_addr: ptr cdouble): m128d {.importc: "_mm_loadl_pd",
+proc loadl_pd128*(a: m128d; mem_addr: ptr cdouble): m128d {.importc: "_mm_loadl_pd",
     header: "immintrin.h".}
-proc loadl_pi*(a: m128; mem_addr: ptr m64): m128 {.importc: "_mm_loadl_pi",
+proc loadl_pi128*(a: m128; mem_addr: ptr m64): m128 {.importc: "_mm_loadl_pi",
     header: "immintrin.h".}
-proc loadr*(mem_addr: ptr cdouble): m128d {.importc: "_mm_loadr_pd",
-                                       header: "immintrin.h".}
-proc loadr*(mem_addr: ptr cfloat): m128 {.importc: "_mm_loadr_ps",
-                                     header: "immintrin.h".}
-proc loadu*(mem_addr: ptr cdouble): m128d {.importc: "_mm_loadu_pd",
-                                       header: "immintrin.h".}
-proc loadu*(mem_addr: ptr cfloat): m128 {.importc: "_mm_loadu_ps",
-                                     header: "immintrin.h".}
+proc loadr_pd128*(mem_addr: ptr cdouble): m128d {.importc: "_mm_loadr_pd",
+    header: "immintrin.h".}
+proc loadr_ps128*(mem_addr: ptr cfloat): m128 {.importc: "_mm_loadr_ps",
+    header: "immintrin.h".}
+proc loadu_pd128*(mem_addr: ptr cdouble): m128d {.importc: "_mm_loadu_pd",
+    header: "immintrin.h".}
+proc loadu_ps128*(mem_addr: ptr cfloat): m128 {.importc: "_mm_loadu_ps",
+    header: "immintrin.h".}
 proc loadu_si128*(mem_addr: ptr m128i): m128i {.importc: "_mm_loadu_si128",
     header: "immintrin.h".}
 proc madd_epi16*(a: m128i; b: m128i): m128i {.importc: "_mm_madd_epi16",
