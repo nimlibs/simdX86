@@ -1,0 +1,15 @@
+#header "immintrin.h"
+#prefix __
+#prefix _
+#def _MM_CMPINT_ENUM int
+#def _MM_MANTISSA_NORM_ENUM int
+#def _MM_MANTISSA_SIGN_ENUM int
+#def _MM_UPCONV_EPI32_ENUM int
+#def _MM_UPCONV_EPI64_ENUM int
+#def _MM_UPCONV_PS_ENUM int
+#def _MM_UPCONV_PD_ENUM int
+#def _MM_DOWNCONV_EPI32_ENUM int
+#def _MM_DOWNCONV_EPI64_ENUM int
+#def _MM_DOWNCONV_PS_ENUM int
+#def _MM_DOWNCONV_PD_ENUM int
+#def _MM_PERM_ENUM int

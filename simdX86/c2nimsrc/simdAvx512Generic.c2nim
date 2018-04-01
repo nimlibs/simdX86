@@ -1,0 +1,40 @@
+#header "immintrin.h"
+#mangle "_[^_]*_cast[^_]*_{.*}" "cast$1"
+#mangle "_[^_]*_{[^_]*}_ps_mask" "$1_mask"
+#mangle "_[^_]*_{[^_]*}_pd_mask" "$1_mask"
+#mangle "_[^_]*_mask_{[^_]*}_ps_mask" "$1_mask"
+#mangle "_[^_]*_mask_{[^_]*}_pd_mask" "$1_mask"
+#mangle "_[^_]*_set_{.*}" "set$1"
+#mangle "_[^_]*_setzero_p{.*}" "setzero_p${1}512"
+#mangle "_[^p]*prefetch_i64gather_{.*}" "prefetch_i64gather_$1"
+#mangle "_[^p]*prefetch_i64scatter_{.*}" "prefetch_i64scatter_$1"
+#prefix __
+#prefix _mm_mask2_
+#prefix _mm_mask3_
+#prefix _mm_maskz_
+#prefix _mm_mask_
+#prefix _mm_
+#prefix _mm256_mask2_
+#prefix _mm256_mask3_
+#prefix _mm256_maskz_
+#prefix _mm256_mask_
+#prefix _mm256_
+#prefix _mm512_mask2_
+#prefix _mm512_mask3_
+#prefix _mm512_maskz_
+#prefix _mm512_mask_
+#prefix _mm512_
+#suffix _ps
+#suffix _pd
+#def _MM_CMPINT_ENUM int
+#def _MM_MANTISSA_NORM_ENUM int
+#def _MM_MANTISSA_SIGN_ENUM int
+#def _MM_UPCONV_EPI32_ENUM int
+#def _MM_UPCONV_EPI64_ENUM int
+#def _MM_UPCONV_PS_ENUM int
+#def _MM_UPCONV_PD_ENUM int
+#def _MM_DOWNCONV_EPI32_ENUM int
+#def _MM_DOWNCONV_EPI64_ENUM int
+#def _MM_DOWNCONV_PS_ENUM int
+#def _MM_DOWNCONV_PD_ENUM int
+#def _MM_PERM_ENUM int

@@ -1,0 +1,9 @@
+#header "immintrin.h"
+#mangle "_[^_]*_cast[^_]*_{.*}" "cast$1"
+#mangle "_[^_]*_set_{.*}" "set$1"
+#mangle "_[^_]*_setzero_p{.*}" "setzero_p${1}256"
+#prefix __
+#prefix _mm_
+#prefix _mm256_
+#suffix _ps
+#suffix _pd
