@@ -64,38 +64,38 @@ proc broadcast*(mem_addr: ptr m128d): m256d {.importc: "_mm256_broadcast_pd",
     header: "immintrin.h".}
 proc broadcast*(mem_addr: ptr m128): m256 {.importc: "_mm256_broadcast_ps",
                                        header: "immintrin.h".}
-proc broadcast_sd*(mem_addr: ptr cdouble): m256d {.importc: "_mm256_broadcast_sd",
+proc broadcast*(mem_addr: ptr cdouble): m256d {.importc: "_mm256_broadcast_sd",
     header: "immintrin.h".}
 proc broadcast_ss*(mem_addr: ptr cfloat): m128 {.importc: "_mm_broadcast_ss",
     header: "immintrin.h".}
-proc broadcast_ss*(mem_addr: ptr cfloat): m256 {.importc: "_mm256_broadcast_ss",
+proc broadcast_256*(mem_addr: ptr cfloat): m256 {.importc: "_mm256_broadcast_ss",
     header: "immintrin.h".}
-proc broadcastb_epi8*(a: m128i): m128i {.importc: "_mm_broadcastb_epi8",
-                                     header: "immintrin.h".}
-proc broadcastb_epi8*(a: m128i): m256i {.importc: "_mm256_broadcastb_epi8",
-                                     header: "immintrin.h".}
-proc broadcastd_epi32*(a: m128i): m128i {.importc: "_mm_broadcastd_epi32",
-                                      header: "immintrin.h".}
-proc broadcastd_epi32*(a: m128i): m256i {.importc: "_mm256_broadcastd_epi32",
-                                      header: "immintrin.h".}
-proc broadcastq_epi64*(a: m128i): m128i {.importc: "_mm_broadcastq_epi64",
-                                      header: "immintrin.h".}
-proc broadcastq_epi64*(a: m128i): m256i {.importc: "_mm256_broadcastq_epi64",
-                                      header: "immintrin.h".}
+proc broadcastb*(a: m128i): m128i {.importc: "_mm_broadcastb_epi8",
+                                header: "immintrin.h".}
+proc broadcastb_256*(a: m128i): m256i {.importc: "_mm256_broadcastb_epi8",
+                                    header: "immintrin.h".}
+proc broadcastd*(a: m128i): m128i {.importc: "_mm_broadcastd_epi32",
+                                header: "immintrin.h".}
+proc broadcastd_256*(a: m128i): m256i {.importc: "_mm256_broadcastd_epi32",
+                                    header: "immintrin.h".}
+proc broadcastq*(a: m128i): m128i {.importc: "_mm_broadcastq_epi64",
+                                header: "immintrin.h".}
+proc broadcastq_256*(a: m128i): m256i {.importc: "_mm256_broadcastq_epi64",
+                                    header: "immintrin.h".}
 proc broadcastsd*(a: m128d): m128d {.importc: "_mm_broadcastsd_pd",
                                  header: "immintrin.h".}
-proc broadcastsd*(a: m128d): m256d {.importc: "_mm256_broadcastsd_pd",
-                                 header: "immintrin.h".}
-proc broadcastsi128_si256*(a: m128i): m256i {.
-    importc: "_mm256_broadcastsi128_si256", header: "immintrin.h".}
+proc broadcastsd_256*(a: m128d): m256d {.importc: "_mm256_broadcastsd_pd",
+                                     header: "immintrin.h".}
+proc broadcastsi128_256*(a: m128i): m256i {.importc: "_mm256_broadcastsi128_si256",
+                                        header: "immintrin.h".}
 proc broadcastss*(a: m128): m128 {.importc: "_mm_broadcastss_ps",
                                header: "immintrin.h".}
-proc broadcastss*(a: m128): m256 {.importc: "_mm256_broadcastss_ps",
-                               header: "immintrin.h".}
-proc broadcastw_epi16*(a: m128i): m128i {.importc: "_mm_broadcastw_epi16",
-                                      header: "immintrin.h".}
-proc broadcastw_epi16*(a: m128i): m256i {.importc: "_mm256_broadcastw_epi16",
-                                      header: "immintrin.h".}
+proc broadcastss_256*(a: m128): m256 {.importc: "_mm256_broadcastss_ps",
+                                   header: "immintrin.h".}
+proc broadcastw*(a: m128i): m128i {.importc: "_mm_broadcastw_epi16",
+                                header: "immintrin.h".}
+proc broadcastw_256*(a: m128i): m256i {.importc: "_mm256_broadcastw_epi16",
+                                    header: "immintrin.h".}
 proc bslli_epi128*(a: m256i; imm8: cint): m256i {.importc: "_mm256_bslli_epi128",
     header: "immintrin.h".}
 proc bsrli_epi128*(a: m256i; imm8: cint): m256i {.importc: "_mm256_bsrli_epi128",
@@ -150,38 +150,38 @@ proc cmpgt_epi64*(a: m256i; b: m256i): m256i {.importc: "_mm256_cmpgt_epi64",
     header: "immintrin.h".}
 proc cmpgt_epi8*(a: m256i; b: m256i): m256i {.importc: "_mm256_cmpgt_epi8",
                                         header: "immintrin.h".}
-proc cvtepi16_epi32*(a: m128i): m256i {.importc: "_mm256_cvtepi16_epi32",
-                                    header: "immintrin.h".}
-proc cvtepi16_epi64*(a: m128i): m256i {.importc: "_mm256_cvtepi16_epi64",
-                                    header: "immintrin.h".}
-proc cvtepi32_epi64*(a: m128i): m256i {.importc: "_mm256_cvtepi32_epi64",
-                                    header: "immintrin.h".}
+proc cvtepi16_epi32_256*(a: m128i): m256i {.importc: "_mm256_cvtepi16_epi32",
+                                        header: "immintrin.h".}
+proc cvtepi16_epi64_256*(a: m128i): m256i {.importc: "_mm256_cvtepi16_epi64",
+                                        header: "immintrin.h".}
+proc cvtepi32_epi64_256*(a: m128i): m256i {.importc: "_mm256_cvtepi32_epi64",
+                                        header: "immintrin.h".}
 proc cvtepi32*(a: m128i): m256d {.importc: "_mm256_cvtepi32_pd", header: "immintrin.h".}
 proc cvtepi32*(a: m256i): m256 {.importc: "_mm256_cvtepi32_ps", header: "immintrin.h".}
-proc cvtepi8_epi16*(a: m128i): m256i {.importc: "_mm256_cvtepi8_epi16",
-                                   header: "immintrin.h".}
-proc cvtepi8_epi32*(a: m128i): m256i {.importc: "_mm256_cvtepi8_epi32",
-                                   header: "immintrin.h".}
-proc cvtepi8_epi64*(a: m128i): m256i {.importc: "_mm256_cvtepi8_epi64",
-                                   header: "immintrin.h".}
-proc cvtepu16_epi32*(a: m128i): m256i {.importc: "_mm256_cvtepu16_epi32",
-                                    header: "immintrin.h".}
-proc cvtepu16_epi64*(a: m128i): m256i {.importc: "_mm256_cvtepu16_epi64",
-                                    header: "immintrin.h".}
-proc cvtepu32_epi64*(a: m128i): m256i {.importc: "_mm256_cvtepu32_epi64",
-                                    header: "immintrin.h".}
-proc cvtepu8_epi16*(a: m128i): m256i {.importc: "_mm256_cvtepu8_epi16",
-                                   header: "immintrin.h".}
-proc cvtepu8_epi32*(a: m128i): m256i {.importc: "_mm256_cvtepu8_epi32",
-                                   header: "immintrin.h".}
-proc cvtepu8_epi64*(a: m128i): m256i {.importc: "_mm256_cvtepu8_epi64",
-                                   header: "immintrin.h".}
+proc cvtepi8_epi16_256*(a: m128i): m256i {.importc: "_mm256_cvtepi8_epi16",
+                                       header: "immintrin.h".}
+proc cvtepi8_epi32_256*(a: m128i): m256i {.importc: "_mm256_cvtepi8_epi32",
+                                       header: "immintrin.h".}
+proc cvtepi8_epi64_256*(a: m128i): m256i {.importc: "_mm256_cvtepi8_epi64",
+                                       header: "immintrin.h".}
+proc cvtepu16_epi32_256*(a: m128i): m256i {.importc: "_mm256_cvtepu16_epi32",
+                                        header: "immintrin.h".}
+proc cvtepu16_epi64_256*(a: m128i): m256i {.importc: "_mm256_cvtepu16_epi64",
+                                        header: "immintrin.h".}
+proc cvtepu32_epi64_256*(a: m128i): m256i {.importc: "_mm256_cvtepu32_epi64",
+                                        header: "immintrin.h".}
+proc cvtepu8_epi16_256*(a: m128i): m256i {.importc: "_mm256_cvtepu8_epi16",
+                                       header: "immintrin.h".}
+proc cvtepu8_epi32_256*(a: m128i): m256i {.importc: "_mm256_cvtepu8_epi32",
+                                       header: "immintrin.h".}
+proc cvtepu8_epi64_256*(a: m128i): m256i {.importc: "_mm256_cvtepu8_epi64",
+                                       header: "immintrin.h".}
 proc cvtpd_epi32*(a: m256d): m128i {.importc: "_mm256_cvtpd_epi32",
                                  header: "immintrin.h".}
 proc cvtpd*(a: m256d): m128 {.importc: "_mm256_cvtpd_ps", header: "immintrin.h".}
 proc cvtps_epi32*(a: m256): m256i {.importc: "_mm256_cvtps_epi32",
                                 header: "immintrin.h".}
-proc cvtps*(a: m128): m256d {.importc: "_mm256_cvtps_pd", header: "immintrin.h".}
+proc cvtps_pd256*(a: m128): m256d {.importc: "_mm256_cvtps_pd", header: "immintrin.h".}
 proc cvttpd_epi32*(a: m256d): m128i {.importc: "_mm256_cvttpd_epi32",
                                   header: "immintrin.h".}
 proc cvttps_epi32*(a: m256): m256i {.importc: "_mm256_cvttps_epi32",
@@ -303,7 +303,7 @@ proc i32gather_epi64*(base_addr: ptr int64; vindex: m128i; scale: cint): m128i {
 proc mask_i32gather_epi64*(src: m128i; base_addr: ptr int64; vindex: m128i; mask: m128i;
                           scale: cint): m128i {.
     importc: "_mm_mask_i32gather_epi64", header: "immintrin.h".}
-proc i32gather_epi64*(base_addr: ptr int64; vindex: m128i; scale: cint): m256i {.
+proc i32gather_epi64_256*(base_addr: ptr int64; vindex: m128i; scale: cint): m256i {.
     importc: "_mm256_i32gather_epi64", header: "immintrin.h".}
 proc mask_i32gather_epi64*(src: m256i; base_addr: ptr int64; vindex: m128i; mask: m256i;
                           scale: cint): m256i {.
@@ -313,7 +313,7 @@ proc i32gather*(base_addr: ptr cdouble; vindex: m128i; scale: cint): m128d {.
 proc mask_i32gather*(src: m128d; base_addr: ptr cdouble; vindex: m128i; mask: m128d;
                     scale: cint): m128d {.importc: "_mm_mask_i32gather_pd",
                                        header: "immintrin.h".}
-proc i32gather*(base_addr: ptr cdouble; vindex: m128i; scale: cint): m256d {.
+proc i32gather_pd256*(base_addr: ptr cdouble; vindex: m128i; scale: cint): m256d {.
     importc: "_mm256_i32gather_pd", header: "immintrin.h".}
 proc mask_i32gather*(src: m256d; base_addr: ptr cdouble; vindex: m128i; mask: m256d;
                     scale: cint): m256d {.importc: "_mm256_mask_i32gather_pd",
@@ -570,14 +570,13 @@ proc setpd*(e3: cdouble; e2: cdouble; e1: cdouble; e0: cdouble): m256d {.
 proc setps*(e7: cfloat; e6: cfloat; e5: cfloat; e4: cfloat; e3: cfloat; e2: cfloat;
            e1: cfloat; e0: cfloat): m256 {.importc: "_mm256_set_ps",
                                       header: "immintrin.h".}
-proc set1_epi16*(a: cshort): m256i {.importc: "_mm256_set1_epi16",
-                                 header: "immintrin.h".}
-proc set1_epi32*(a: cint): m256i {.importc: "_mm256_set1_epi32", header: "immintrin.h".}
-proc set1_epi64x*(a: clonglong): m256i {.importc: "_mm256_set1_epi64x",
-                                     header: "immintrin.h".}
-proc set1_epi8*(a: char): m256i {.importc: "_mm256_set1_epi8", header: "immintrin.h".}
-proc set1*(a: cdouble): m256d {.importc: "_mm256_set1_pd", header: "immintrin.h".}
-proc set1*(a: cfloat): m256 {.importc: "_mm256_set1_ps", header: "immintrin.h".}
+proc set1_256*(a: cshort): m256i {.importc: "_mm256_set1_epi16", header: "immintrin.h".}
+proc set1_256*(a: cint): m256i {.importc: "_mm256_set1_epi32", header: "immintrin.h".}
+proc set1_256*(a: clonglong): m256i {.importc: "_mm256_set1_epi64x",
+                                  header: "immintrin.h".}
+proc set1_256*(a: char): m256i {.importc: "_mm256_set1_epi8", header: "immintrin.h".}
+proc set1_256*(a: cdouble): m256d {.importc: "_mm256_set1_pd", header: "immintrin.h".}
+proc set1_256*(a: cfloat): m256 {.importc: "_mm256_set1_ps", header: "immintrin.h".}
 proc setr_epi16*(e15: cshort; e14: cshort; e13: cshort; e12: cshort; e11: cshort;
                 e10: cshort; e9: cshort; e8: cshort; e7: cshort; e6: cshort; e5: cshort;
                 e4: cshort; e3: cshort; e2: cshort; e1: cshort; e0: cshort): m256i {.
@@ -749,10 +748,11 @@ proc testz*(a: m128; b: m128): cint {.importc: "_mm_testz_ps", header: "immintri
 proc testz*(a: m256; b: m256): cint {.importc: "_mm256_testz_ps", header: "immintrin.h".}
 proc testz_si256*(a: m256i; b: m256i): cint {.importc: "_mm256_testz_si256",
                                         header: "immintrin.h".}
-proc undefined*(): m128d {.importc: "_mm_undefined_pd", header: "immintrin.h".}
-proc undefined*(): m256d {.importc: "_mm256_undefined_pd", header: "immintrin.h".}
-proc undefined*(): m128 {.importc: "_mm_undefined_ps", header: "immintrin.h".}
-proc undefined*(): m256 {.importc: "_mm256_undefined_ps", header: "immintrin.h".}
+proc undefined_pd*(): m128d {.importc: "_mm_undefined_pd", header: "immintrin.h".}
+proc undefined_pd256*(): m256d {.importc: "_mm256_undefined_pd",
+                              header: "immintrin.h".}
+proc undefined_ps*(): m128 {.importc: "_mm_undefined_ps", header: "immintrin.h".}
+proc undefined_ps256*(): m256 {.importc: "_mm256_undefined_ps", header: "immintrin.h".}
 proc undefined_si128*(): m128i {.importc: "_mm_undefined_si128",
                               header: "immintrin.h".}
 proc undefined_si256*(): m256i {.importc: "_mm256_undefined_si256",

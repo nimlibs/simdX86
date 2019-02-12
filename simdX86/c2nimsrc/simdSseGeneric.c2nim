@@ -6,6 +6,7 @@
 #mangle "_[^_]*_load{[^_]*}_{.*}" "load$1_${2}128"
 #mangle "_[^_]*_set_{.*}" "set$1"
 #mangle "_[^_]*_setzero_p{.*}" "setzero_p${1}128"
+#mangle "_[^_]*_cvtepi32_{.*}" "cvtepi32_$1"
 #prefix __
 #prefix _m_
 #prefix _mm_

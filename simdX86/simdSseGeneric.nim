@@ -263,8 +263,8 @@ proc cvtepi16_epi64*(a: m128i): m128i {.importc: "_mm_cvtepi16_epi64",
                                     header: "immintrin.h".}
 proc cvtepi32_epi64*(a: m128i): m128i {.importc: "_mm_cvtepi32_epi64",
                                     header: "immintrin.h".}
-proc cvtepi32*(a: m128i): m128d {.importc: "_mm_cvtepi32_pd", header: "immintrin.h".}
-proc cvtepi32*(a: m128i): m128 {.importc: "_mm_cvtepi32_ps", header: "immintrin.h".}
+proc cvtepi32_pd*(a: m128i): m128d {.importc: "_mm_cvtepi32_pd", header: "immintrin.h".}
+proc cvtepi32_ps*(a: m128i): m128 {.importc: "_mm_cvtepi32_ps", header: "immintrin.h".}
 proc cvtepi8_epi16*(a: m128i): m128i {.importc: "_mm_cvtepi8_epi16",
                                    header: "immintrin.h".}
 proc cvtepi8_epi32*(a: m128i): m128i {.importc: "_mm_cvtepi8_epi32",

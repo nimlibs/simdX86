@@ -4,12 +4,24 @@
 #mangle _mm256_loadu2_m128d loadu2_m128d
 #mangle _mm256_loadu2_m128i loadu2_m128i
 #mangle _mm256_loadu_si256 loadu_si256
+#mangle _mm256_i32gather_pd i32gather_pd256
+#mangle _mm256_i32gather_epi64 i32gather_epi64_256
+#mangle _mm256_cvtps_pd cvtps_pd256
+#mangle "_mm256_cvtep{[^_]*}_ep{.*}" "cvtep${1}_ep${2}_256"
+#mangle _mm256_broadcast_ss broadcast_256
+#mangle _mm256_broadcast_sd broadcast
+#mangle "_mm_broadcast{[^_][^_]*}_{.*}" "broadcast${1}"
+#mangle "_mm256_broadcast{[^_][^_]*}_{.*}" "broadcast${1}_256"
 #mangle "_[^_]*_cast[^_]*_{.*}" "cast$1"
 #mangle "_[^_]*_load{[^_]*}_{.*}" "load$1_${2}256"
 #mangle "_[^_]*_maskload_epi.*" "maskload"
 #mangle "_[^_]*_set_{.*}" "set$1"
+#mangle "_[^_]*_set1_{.*}" "set1_256"
 #mangle "_[^_]*_setzero_p{.*}" "setzero_p${1}256"
 #mangle "_[^_]*_storeu2_.*" "storeu2"
+#mangle "_mm_undefined_{.*}" "undefined_${1}"
+#mangle _mm256_undefined_si256 undefined_si256
+#mangle "_mm256_undefined_{.*}" "undefined_${1}256"
 #prefix __
 #prefix _mm_
 #prefix _mm256_
